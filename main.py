@@ -10,6 +10,15 @@ def print_menu():
           "\n")
 
 
+def decode(encoded):
+    decoded = []
+    for i in encoded:
+        newDecode = i - 3
+        if newDecode < 0:
+            newDecode *= -1
+        decoded.append(newDecode)
+    return decoded
+
 def encode(password):
     new_list = []
     for i in password:
@@ -31,7 +40,8 @@ def main():
             print("You password has been encoded and stored!")
             print()
         if menu_option == "2":
-            print(f"The encoded password is {encoded}, and the original password is {password}.")
+            decoded = decode(encoded)
+            print(f"The encoded password is {encoded}, and the original password is {decoded}.")
             print()
 
 
